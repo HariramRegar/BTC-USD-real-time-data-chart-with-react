@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from "react-dom";
 import { withStyles } from "@material-ui/core/styles";
 import Chart from "./chart";
 
@@ -17,12 +16,12 @@ class App extends React.Component {
         {
           type: "line",
           label: "BTC-USD",
-          backgroundColor: "rgba(0, 0, 0, 0)",
+          backgroundColor: "blue",
           borderColor: this.props.theme.palette.primary.main,
           pointBackgroundColor: this.props.theme.palette.secondary.main,
           pointBorderColor: this.props.theme.palette.secondary.main,
-          borderWidth: "2",
-          lineTension: 0.45,
+          borderWidth: "0",
+          lineTension: 0.5,
           data: []
         }
       ]
@@ -93,10 +92,12 @@ class App extends React.Component {
 
     return (
       <div className={classes["chart-container"]}>
+        <h1>BTC-USD Real-Time Data Chart</h1>
         <Chart
           data={this.state.lineChartData}
           options={this.state.lineChartOptions}
         />
+        <p>This page is developed by Piyush Kumar, IIT Kanpur.</p>
       </div>
     );
   }
